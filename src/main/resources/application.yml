@@ -1,0 +1,63 @@
+# ===============================
+# = Server Cofiguration
+# ===============================
+server:
+  port: 8080
+  error:
+    whitelabel:
+      enabled: false
+
+# ===============================
+# = DATA SOURCE
+# ===============================
+spring:
+
+  datasource:
+    username: root
+    password: Mentor94
+
+    url: jdbc:mysql://localhost:3306/dairy?autoReconnect=true&useSSL=false
+    testWhileIdle: true
+    initialization-mode: always
+
+    validationQuery: SELECT 1
+
+# ===============================
+# = JPA / HIBERNATE
+# ===============================
+  jpa:
+    show_sql: true
+    format_sql: true
+    hibernate:
+      ddl-auto: update
+
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        enable_lazy_load_no_trans: true
+
+# ===============================
+# =Provide Application Name
+# ===============================
+  application:
+    name: Digi-dairy-API
+
+
+#  data:
+#    rest:
+#      base-path: /api
+
+# ===============================
+# = H2 CONFIG
+# ===============================
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2
+
+
+# App Properties
+#dairy:
+#  system:
+#    jwtSecret: jwtGrokonezSecretKey
+#    jwtExpiration: 86400
